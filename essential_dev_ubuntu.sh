@@ -51,7 +51,7 @@ git clone https://github.com/NvChad/Starter "$HOME/.config/nvim"
 
 echo "--- [5/6] Installing Oh My Posh ---"
 curl -s https://ohmyposh.dev/install.sh | bash -s
-curl -o "$HOME/.config/EDM115-newline.omp.json" https://raw.githubusercontent.com/username/repo/main/path/to/file.json # Replace with actual URL
+curl -o "$HOME/.config/EDM115-newline.omp.json" https://raw.githubusercontent.com/wongwaijeremy/scripts/master/EDM115-newline.omp.json
 eval "$(oh-my-posh init bash --config $HOME/.config/EDM115-newline.omp.json)"
 
 echo "--- [6/6] Configuring .bashrc ---"

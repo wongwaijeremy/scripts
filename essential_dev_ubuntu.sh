@@ -13,7 +13,7 @@ set -e # Exit immediately if a command exits with a non-zero status
 
 echo "--- [1/6] Updating System & Installing Essentials ---"
 sudo apt update
-sudo apt install git tmux eza unzip
+sudo apt install git tmux eza unzip build-essential -y
 
 echo "--- [2/6] Detecting Architecture ---"
 ARCH=$(uname -m)
@@ -34,7 +34,10 @@ echo "--- [3/6] Installing Neovim (Latest Stable) ---"
 sudo apt remove -y neovim neovim-runtime 2>/dev/null || true
 
 # Download and Install
-sudo apt install neovim
+curl -LO "https://github.com/neovim/neovim/releases/download/v0.11.5/nvim-linux-$ARCH.appimage"
+chmod u+x nvim-linux-$ARCH.appimage
+sudo mv nvim-linux-$ARCH.appimage /usr/local/bin/nvim
+
 
 echo "--- [4/6] Installing NvChad ---"
 # Backup existing neovim config if present
